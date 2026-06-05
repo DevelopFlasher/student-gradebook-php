@@ -1,0 +1,23 @@
+services:
+  mysql:
+    image: mysql:latest
+    ports:
+      - 3306:3306
+    volumes:
+      - ./mysql:/docker-entrypoint-initdb.d/
+    environment:
+      MYSQL_ROOT_PASSWORD: none
+  apache:
+    build: ./apache
+    ports:
+      - 8080:8080
+    volumes:
+      - ./apache/src:/var/www/html
+    depends_on:
+      - mysql
+  nginx:
+    build: ./nginx
+    ports:
+      - 8010:8010
+    volumes:
+      - ./nginx/static:/usr/share/nginx/html
