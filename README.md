@@ -1,8 +1,8 @@
-# Student Gradebook PHP
+# Электронный журнал на PHP
 
-A compact PHP and MySQL gradebook application packaged with Docker Compose. The project contains an Apache/PHP API, a MySQL initialization script, and an nginx-served static frontend.
+Небольшое web-приложение электронного журнала, развернутое через Docker Compose. В проекте разделены PHP backend на Apache, MySQL с initialization script и статический frontend через nginx.
 
-## Tech Stack
+## Стек
 
 - PHP
 - MySQL
@@ -11,36 +11,35 @@ A compact PHP and MySQL gradebook application packaged with Docker Compose. The 
 - Docker Compose
 - HTML, CSS, JavaScript
 
-## Features
+## Возможности
 
-- Dockerized PHP backend
-- MySQL schema initialization
-- Static frontend served through nginx
-- API files for users, teachers, subjects, and marks
+- Авторизация demo-пользователя
+- Отображение предметов, оценок и преподавателей
+- API-файлы для пользователей, предметов, преподавателей и оценок
+- Инициализация MySQL из SQL-скрипта
+- Отдельный статический frontend
 
-## Run Locally
+## Запуск
 
 ```bash
 docker compose up --build
 ```
 
-Services:
-
-| Service | URL |
+| Компонент | URL |
 | --- | --- |
 | Frontend | http://localhost:8010 |
 | PHP API | http://localhost:8080 |
 | MySQL | `localhost:3306` |
 
-## Repository Structure
+## Структура
 
 ```text
-apache/       PHP API and Apache container
-mysql/        Database initialization
-nginx/        Static frontend and nginx config
+apache/  PHP API и Apache container
+mysql/   SQL-инициализация базы
+nginx/   статический frontend и nginx config
 ```
 
-## Portfolio Notes
+## Для портфолио
 
-This project demonstrates a simple multi-container web application with a PHP backend, MySQL database, and static frontend split behind nginx.
+Проект демонстрирует простой multi-container web stack: PHP, MySQL, nginx и базовую работу с данными.
 
